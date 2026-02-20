@@ -1,0 +1,40 @@
+@mixin img($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin btn {
+  border: none;
+  cursor: pointer;
+}
+@mixin lnk {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@mixin flex($fd: row) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin sm-text {
+  font-size: 14px;
+  line-height: 20px;
+}
+@mixin md-text {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+@mixin lg-text {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+}
+@mixin xl-text {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 76px;
+}
