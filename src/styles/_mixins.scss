@@ -1,4 +1,4 @@
-@mixin img($w, $h) {
+@mixin wh($w, $h) {
   width: $w;
   height: $h;
 }
@@ -6,17 +6,19 @@
 @mixin btn {
   border: none;
   cursor: pointer;
+  font-weight: 500;
+  background-color: transparent;
 }
 @mixin lnk {
   text-decoration: none;
   cursor: pointer;
 }
 
-@mixin flex($fd: row) {
+@mixin flex($fd: row, $al: center) {
   display: flex;
   flex-direction: $fd;
   justify-content: space-between;
-  align-items: center;
+  align-items: $al;
 }
 
 @mixin sm-text {

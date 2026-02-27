@@ -2,4 +2,94 @@
 @import "./variables";
 
 .footer {
+  @include flex;
+  padding: 64px 165px;
+  background-color: $neutral-bl;
+
+  .info {
+    @include flex(column, start);
+    width: 350px;
+    gap: 40px;
+
+    .copyright {
+      @include flex(column, start);
+      @include sm-text;
+      color: $neutral-sl;
+      gap: $space-sm;
+    }
+    .social {
+      @include flex;
+      gap: $space-md;
+
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .links {
+    @include flex($al: start);
+    gap: 30px;
+
+    .header {
+      @include md-text;
+      color: $def-color;
+    }
+
+    .company,
+    .support,
+    .update {
+      @include flex(column, start);
+      gap: $space-lg;
+    }
+    .company,
+    .support {
+      width: 160px;
+
+      .list {
+        @include flex(column, start);
+        list-style: none;
+        gap: 12px;
+
+        li {
+          @include sm-text;
+
+          .link {
+            @include lnk;
+            color: $neutral-sl;
+          }
+        }
+      }
+    }
+    .update {
+      width: 255px;
+
+      .input {
+        @include flex;
+        height: 40px;
+        padding-inline: 12px;
+        background-color: rgba($def-color, 0.2);
+        border-radius: $space-sm;
+      }
+      .input:focus-within {
+        outline: 2.5px solid $neutral-sl;
+        outline-offset: 1.25px;
+      }
+      .email {
+        padding-right: 12px;
+        color: $def-color;
+        background-color: transparent;
+        border: none;
+      }
+      .email:focus {
+        outline: none;
+      }
+      .email::placeholder {
+        color: $gr-300;
+      }
+      .input img {
+        cursor: pointer;
+      }
+    }
+  }
 }

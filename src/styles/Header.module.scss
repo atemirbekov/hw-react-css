@@ -2,4 +2,42 @@
 @import "./variables";
 
 .header {
+  @include flex;
+  padding: 22px 120px 22px 105px;
+  background-color: $neutral-sl;
+
+  .list {
+    @include flex;
+    gap: 50px;
+
+    .list_item {
+      list-style-type: none;
+    }
+    .link {
+      @include lnk;
+      color: $gr-900;
+    }
+    .current {
+      font-weight: 500;
+    }
+  }
+
+  .btns {
+    @include flex;
+    gap: 14px;
+
+    .btn {
+      @include btn;
+      @include sm-text;
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+    .btn_wht {
+      color: $prm-color;
+    }
+    .btn_grn {
+      color: $def-color;
+      background-color: $prm-color;
+    }
+  }
 }
