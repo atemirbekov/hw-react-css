@@ -1,43 +1,49 @@
-@import "./mixins";
-@import "./variables";
+@use "./mixins" as m;
+@use "./variables" as v;
 
 .header {
-  @include flex;
+  @include m.flex;
   padding: 22px 120px 22px 105px;
-  background-color: $neutral-sl;
+  background-color: v.$neutral-sl;
 
   .list {
-    @include flex;
+    @include m.flex;
     gap: 50px;
 
     .list_item {
       list-style-type: none;
     }
+
     .link {
-      @include lnk;
-      color: $gr-900;
+      display: inline-block;
+      @include m.lnk;
+      line-height: v.$space-lg;
+      color: v.$gr-900;
     }
+
     .current {
       font-weight: 500;
     }
   }
 
   .btns {
-    @include flex;
+    @include m.flex;
     gap: 14px;
 
     .btn {
-      @include btn;
-      @include sm-text;
+      @include m.btn;
+      @include m.sm-text;
       padding: 10px 20px;
       border-radius: 6px;
     }
+
     .btn_wht {
-      color: $prm-color;
+      color: v.$prm-color;
     }
+
     .btn_grn {
-      color: $def-color;
-      background-color: $prm-color;
+      color: v.$def-color;
+      background-color: v.$prm-color;
     }
   }
 }

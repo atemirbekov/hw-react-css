@@ -1,25 +1,26 @@
-@import "./mixins";
-@import "./variables";
+@use "./mixins" as m;
+@use "./variables" as v;
 
 .footer {
-  @include flex;
+  @include m.flex;
   padding: 64px 165px;
-  background-color: $neutral-bl;
+  background-color: v.$neutral-bl;
 
   .info {
-    @include flex(column, start);
+    @include m.flex(column, start);
     width: 350px;
     gap: 40px;
 
     .copyright {
-      @include flex(column, start);
-      @include sm-text;
-      color: $neutral-sl;
-      gap: $space-sm;
+      @include m.flex(column, start);
+      @include m.sm-text;
+      color: v.$neutral-sl;
+      gap: v.$space-sm;
     }
+
     .social {
-      @include flex;
-      gap: $space-md;
+      @include m.flex;
+      gap: v.$space-md;
 
       img {
         cursor: pointer;
@@ -28,65 +29,72 @@
   }
 
   .links {
-    @include flex($al: start);
+    @include m.flex($al: start);
     gap: 30px;
 
     .header {
-      @include md-text;
-      color: $def-color;
+      @include m.md-text;
+      color: v.$def-color;
     }
 
     .company,
     .support,
     .update {
-      @include flex(column, start);
-      gap: $space-lg;
+      @include m.flex(column, start);
+      gap: v.$space-lg;
     }
+
     .company,
     .support {
       width: 160px;
 
       .list {
-        @include flex(column, start);
+        @include m.flex(column, start);
         list-style: none;
         gap: 12px;
 
         li {
-          @include sm-text;
+          @include m.sm-text;
 
           .link {
-            @include lnk;
-            color: $neutral-sl;
+            @include m.lnk;
+            color: v.$neutral-sl;
           }
         }
       }
     }
+
     .update {
       width: 255px;
 
       .input {
-        @include flex;
+        @include m.flex;
         height: 40px;
         padding-inline: 12px;
-        background-color: rgba($def-color, 0.2);
-        border-radius: $space-sm;
+        background-color: rgba(v.$def-color, 0.2);
+        border-radius: v.$space-sm;
       }
+
       .input:focus-within {
-        outline: 2.5px solid $neutral-sl;
+        outline: 2.5px solid v.$neutral-sl;
         outline-offset: 1.25px;
       }
+
       .email {
         padding-right: 12px;
-        color: $def-color;
+        color: v.$def-color;
         background-color: transparent;
         border: none;
       }
+
       .email:focus {
         outline: none;
       }
+
       .email::placeholder {
-        color: $gr-300;
+        color: v.$gr-300;
       }
+
       .input img {
         cursor: pointer;
       }

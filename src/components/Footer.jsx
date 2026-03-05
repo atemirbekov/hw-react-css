@@ -90,7 +90,9 @@ export default function Footer() {
             <input
               className={styles.email}
               type="email"
+              name="email"
               placeholder="Your email address"
+              autoComplete="on"
             />
             <img src={send} alt="send" />
           </div>

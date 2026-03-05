@@ -1,5 +1,382 @@
-@import "./mixins";
-@import "./variables";
+@use "./mixins" as m;
+@use "./variables" as v;
 
 .main {
+  .btn {
+    @include m.btn;
+    padding: 14px v.$space-xl;
+    border-radius: 4px;
+    font-size: v.$space-md;
+    line-height: v.$space-lg;
+    color: v.$def-color;
+    background-color: v.$prm-color;
+  }
+
+  .text {
+    @include m.flex(column);
+    text-align: center;
+    gap: v.$space-sm;
+
+    .title {
+      @include m.lg-text;
+      width: 542px;
+      color: v.$d-gr;
+    }
+
+    .desc {
+      color: v.$neutral-gr;
+      line-height: v.$space-lg;
+    }
+  }
+
+  .home {
+    @include m.flex(column);
+    margin-bottom: 42px;
+    gap: 40px;
+
+    .hero {
+      @include m.flex;
+      width: 100%;
+      padding: 96px v.$pad-inline;
+      background-color: v.$neutral-sl;
+
+      .frame {
+        @include m.flex(column, start);
+        gap: v.$space-xl;
+        width: 657px;
+
+        .ftext {
+          @include m.flex(column, start);
+          gap: v.$space-md;
+
+          .header {
+            @include m.xl-text;
+            color: v.$d-gr;
+
+            .span {
+              color: v.$prm-color;
+            }
+          }
+
+          .par {
+            line-height: v.$space-lg;
+            color: v.$neutral-gr;
+          }
+        }
+      }
+    }
+
+    .clients {
+      @include m.flex(column);
+      padding-inline: v.$pad-inline;
+      gap: v.$space-md;
+      width: 100%;
+
+      .logos {
+        @include m.flex;
+        padding-block: 25px;
+        width: 100%;
+
+        .logo {
+          @include m.wh(48px, 48px);
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+    }
+
+    .community {
+      @include m.flex(column);
+      padding-inline: v.$pad-inline;
+      gap: v.$space-md;
+      width: 100%;
+
+      .cards {
+        width: 100%;
+        @include m.flex;
+        .card {
+          @include m.flex(column);
+          padding: v.$space-lg;
+          width: 299px;
+          text-align: center;
+          gap: v.$space-sm;
+          box-shadow: 0px 2px 4px 0px #abbed133;
+
+          .member,
+          .nation,
+          .club {
+            @include m.flex(column);
+            gap: v.$space-md;
+
+            .header {
+              width: 231px;
+              font-size: 28px;
+              font-weight: 700;
+              line-height: 36px;
+              color: v.$d-gr;
+            }
+          }
+          .frame {
+            @include m.sm-text;
+            color: v.$neutral-gr;
+          }
+        }
+        .card2 {
+          padding-inline: 30px;
+        }
+      }
+    }
+  }
+
+  .body {
+    @include m.flex(column);
+    gap: 48px;
+    margin-bottom: 94.6px;
+
+    .unlock {
+      @include m.flex;
+      width: 100%;
+      padding-inline: v.$pad-inline;
+
+      .frame {
+        @include m.flex(column, start);
+        padding-right: 60px;
+        gap: v.$space-xl;
+        width: 661px;
+
+        .text {
+          @include m.flex(column, start);
+          text-align: start;
+          gap: v.$space-md;
+
+          .header {
+            @include m.lg-text;
+            letter-spacing: 0.534px;
+            color: v.$d-gr;
+          }
+          .par {
+            @include m.sm-text;
+            color: v.$neutral-gr;
+          }
+        }
+      }
+    }
+    .achievements {
+      width: 100%;
+      @include m.flex;
+      padding: 64px v.$pad-inline;
+      background-color: v.$neutral-sl;
+
+      .section {
+        @include m.flex(column, start);
+        gap: v.$space-sm;
+        width: 540px;
+
+        .heading {
+          @include m.lg-text;
+          width: 408px;
+          letter-spacing: 1px;
+          color: v.$d-gr;
+          .title {
+            color: v.$prm-color;
+          }
+        }
+        .desc {
+          line-height: v.$space-lg;
+          color: v.$gr-900;
+        }
+      }
+
+      .counts {
+        @include m.flex(column);
+        height: 160px;
+        .row {
+          @include m.flex;
+          gap: 30px;
+          .item {
+            @include m.flex;
+            gap: v.$space-md;
+            .details {
+              width: 191px;
+              .number {
+                font-size: 28px;
+                line-height: 36px;
+                font-weight: 700;
+                color: v.$d-gr;
+              }
+              .label {
+                line-height: v.$space-lg;
+                color: v.$neutral-gr;
+              }
+            }
+          }
+        }
+      }
+    }
+    .calendar {
+      @include m.flex;
+      width: 100%;
+      padding-inline: v.$pad-inline;
+
+      .frame {
+        @include m.flex(column, start);
+        padding-right: 60px;
+        gap: v.$space-xl;
+        width: 661px;
+
+        .text {
+          @include m.flex(column, start);
+          text-align: start;
+          gap: v.$space-md;
+
+          .header {
+            @include m.lg-text;
+            letter-spacing: 0.534px;
+            color: v.$d-gr;
+          }
+          .par {
+            @include m.sm-text;
+            color: v.$neutral-gr;
+          }
+        }
+      }
+    }
+    .customers {
+      width: 100%;
+      @include m.flex;
+      padding: v.$space-xl v.$pad-inline;
+      background-color: v.$neutral-sl;
+      .tesla {
+        @include m.wh(326px, 326px);
+        object-fit: cover;
+        object-position: center;
+        border-radius: 8px;
+      }
+      .content {
+        @include m.flex(column, start);
+        gap: v.$space-xl;
+        width: 748px;
+        .text {
+          @include m.flex(column, start);
+          text-align: start;
+          gap: v.$space-md;
+          .par {
+            margin-right: 5px;
+            line-height: v.$space-lg;
+            font-weight: 500;
+            color: v.$neutral-gr;
+          }
+        }
+        .frame {
+          @include m.flex(column, start);
+          gap: v.$space-sm;
+          .name {
+            @include m.md-text;
+            color: v.$prm-color;
+          }
+          .company {
+            line-height: v.$space-lg;
+            color: v.$l-gr;
+          }
+        }
+      }
+      .companies {
+        @include m.flex;
+        width: 100%;
+        .logos {
+          @include m.flex;
+          gap: 41px;
+          .logo {
+            @include m.wh(48px, 48px);
+            object-fit: contain;
+            object-position: center;
+          }
+        }
+        .meet {
+          @include m.flex;
+          padding: v.$space-sm 0 v.$space-sm v.$space-sm;
+          gap: v.$space-sm;
+          cursor: pointer;
+          .action {
+            @include m.md-text;
+            color: v.$prm-color;
+          }
+        }
+      }
+    }
+    .updates {
+      @include m.flex(column);
+      padding-inline: v.$pad-inline;
+      gap: v.$space-md;
+      text-align: center;
+      .community {
+        @include m.flex(column);
+        gap: v.$space-sm;
+        .title {
+          @include m.lg-text;
+          color: v.$d-gr;
+        }
+        .desc {
+          width: 628px;
+          line-height: v.$space-lg;
+          color: v.$neutral-gr;
+        }
+      }
+      .cards {
+        @include m.flex;
+        gap: v.$space-lg;
+        .card {
+          height: 366px;
+          .image {
+            @include m.wh(368px, 286px);
+            object-fit: cover;
+            object-position: center;
+          }
+          .content {
+            @include m.flex(column);
+            padding: v.$space-md;
+            margin-inline: 25.5px;
+            gap: v.$space-md;
+            background-color: v.$neutral-sl;
+            border-radius: v.$space-sm;
+            transform: translateY(-96px);
+            box-shadow: 0px 8px 16px 0px #abbed166;
+            .text {
+              @include m.md-text;
+              margin-inline: 1.5px;
+              color: v.$neutral-gr;
+            }
+            .read {
+              @include m.flex;
+              padding-block: 2px;
+              gap: v.$space-sm;
+              cursor: pointer;
+              .action {
+                @include m.md-text;
+                color: v.$prm-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .demo {
+    @include m.flex(column);
+    text-align: center;
+    gap: v.$space-xl;
+    padding-block: v.$space-xl;
+    background-color: v.$neutral-sl;
+
+    .header {
+      width: 825px;
+      @include m.xl-text;
+      color: v.$neutral-bl;
+    }
+    .ctr {
+      @include m.flex;
+      gap: v.$space-sm;
+    }
+  }
 }
